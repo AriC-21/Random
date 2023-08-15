@@ -110,13 +110,13 @@ We have provided an interactive dashboard for the sellers, they can opt for this
 Clone the project
 
 ```bash
-  git clone https://github.com/prathikshetty2002/Dripy.git
+  git clone git@github.com:AriC-21/Random.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd Dripy
+  cd Random
 ```
 Create a virtualenv
 
@@ -133,15 +133,19 @@ Activate venv
 start the flask app
 
 ```bash
-  cd api.dripy.com/
+  cd backend
 
   python app.py
 ```
 Install dependencies
 ```bash
-  cd www.dripy.com/
+  cd frontend
 
   npm install
+```
+If Error occurs regarding webpack and haching
+```bash
+  export NODE_OPTIONS=--openssl-legacy-provider   
 ```
 Start the server
 
@@ -152,7 +156,7 @@ Start the server
 Start the sellers portal
 
 ```bash
-  cd www.dripysellers.com/
+  cd frontend
 
   npm run dev
 
