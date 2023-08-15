@@ -1,31 +1,8 @@
-// import firebase from "firebase";
-
-// export const firebaseConfig = {
-//   apiKey: "AIzaSyBarIH7SMVQLlOF9-6kY4tMDWJk15i9K9g",
-//   authDomain: "random-b7478.firebaseapp.com",
-//   projectId: "random-b7478",
-//   storageBucket: "random-b7478.appspot.com",
-//   messagingSenderId: "5873795293",
-//   appId: "1:5873795293:web:180a93e37f995284789b34"
-// };
-// const app=firebase.initializeApp(firebaseConfig);
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }else {
-//   firebase.app(); // if already initialized, use that one
-// }
-// // const app=firebase.initializeApp(firebaseConfig);
-// const auth = firebase.auth();
-// const db = firebase.firestore();
-// const storage = firebase.storage()
-
-// export { firebase, auth, db, storage };
-// console.log(app.name ? "Firebase Mode Activated!" : "Firebase not working :(");
+// *****   export { firebase, auth, db, storage }; ********
 
 // Import the functions you need from the SDKs you need
 
-
-// Import the functions you need from the SDKs you need
+import firebase from "firebase";
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -37,8 +14,20 @@ const firebaseConfig = {
   projectId: "random-23ae1",
   storageBucket: "random-23ae1.appspot.com",
   messagingSenderId: "485321894019",
-  appId: "1:485321894019:web:7670750477692f19bfd3b6"
+  appId: "1:485321894019:web:398b2b4debe747a1bfd3b6"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let app;
+if(!app){
+  app=firebase.initializeApp(firebaseConfig);
+}
+else{
+  console.log("Firebase already initialized\n");
+}
+
+const auth=firebase.auth(app);
+const db=firebase.database(app);
+const storage=firebase.storage(app);
+
+export { firebase, auth, db, storage };
