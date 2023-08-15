@@ -188,15 +188,11 @@ Start the sellers portal
 
 ## Authors
 
-🔆 [@Jayesh Potlabattini](https://github.com/Mr-Jayesh)
+🔆 [@Arindam Chatterjee](https://github.com/AriC-21)
 
-🔆 [@Roshan Patil](https://www.github.com/R-ctrl-ctrl)
+🔆 [@Balivada Sri Vamsi](https://www.github.com/vam244)
 
-🔆 [@Ashutosh Pandey](https://www.github.com/ap3249)
-
-🔆 [@Prathik Shetty](https://www.github.com/prathikshetty2002)
-
-
+🔆 [@Mohit Kumar](https://www.github.com/imohitkumar1610)
 
 
 
