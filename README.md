@@ -158,17 +158,6 @@ Start the server
   npm run dev
 
 ```
-Start the sellers portal
-
-```bash
-  cd frontend
-
-  npm run dev
-
-```
-
-
-
 
 ## Project Snippets
 
