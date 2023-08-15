@@ -34,7 +34,6 @@ def extract_features(img_path,model):
 feature_list = pickle.load(open('embeddings.pkl','rb'))
 filenames = pickle.load(open('filenames.pkl','rb'))
 
-
 neighbors = NearestNeighbors(n_neighbors=6,algorithm='brute',metric='euclidean')
 neighbors.fit(feature_list)
 
