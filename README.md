@@ -144,8 +144,13 @@ Install dependencies
   npm install
 ```
 If Error occurs regarding webpack and haching
+for mac/linux :
 ```bash
   export NODE_OPTIONS=--openssl-legacy-provider   
+```
+for windows:
+```bash
+  set NODE_OPTIONS=--openssl-legacy-provider   
 ```
 Start the server
 
