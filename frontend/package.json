@@ -11,7 +11,7 @@
     "@hookform/resolvers": "^1.0.0",
     "@landbot/core": "^1.6.2",
     "date-fns": "^2.16.1",
-    "firebase": "12.4.7",
+    "firebase": "^10.1.0",
     "next": "11.1.4",
     "node-fetch": "^3.2.9",
     "react": "^17.0.2",
