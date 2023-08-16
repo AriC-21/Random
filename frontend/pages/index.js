@@ -18,7 +18,7 @@ export default function Home() {
     <Layout>
       <div className={styles.container}>
         <Head>
-          <title>Dripy</title>
+          <title>Random</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

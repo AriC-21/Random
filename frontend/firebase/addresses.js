@@ -1,4 +1,5 @@
-import { auth, db, firebase } from "../config/firebase";
+import { auth, db} from "../config/firebase";
+import { Firestore } from "firebase/firestore";
 
 const addAddress = ({ title, city, region, zipcode, full_address }) => {
   db.collection("Addresses")
@@ -13,7 +14,7 @@ const addAddress = ({ title, city, region, zipcode, full_address }) => {
       db.collection("Users")
         .doc(auth.currentUser.uid)
         .update({
-          addresses: firebase.firestore.FieldValue.arrayUnion(doc.id),
+          addresses: Firestore.FieldValue.arrayUnion(doc.id),
         })
         .finally(() => window.location.reload(false)); // reload page
     });
@@ -38,7 +39,7 @@ const deleteAddress = ({ id }) => {
       db.collection("Users")
         .doc(auth.currentUser.uid)
         .update({
-          addresses: firebase.firestore.FieldValue.arrayRemove(id),
+          addresses: Firestore.FieldValue.arrayRemove(id),
         })
         .finally(() => window.location.reload(false)); // reload page
     });

@@ -22,6 +22,9 @@ function MyApp({ Component, pageProps }) {
 // src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"
 // onLoad={setupLandbot}
 // />
+
+//-----------------
+// Bot integrated here
   return (
     <AuthProvider>
       

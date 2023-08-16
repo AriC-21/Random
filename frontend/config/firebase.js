@@ -18,8 +18,8 @@ if(!app){
 else{
   console.log("Firebase already initialized\n");
 }
-const db = getFirestore(app);
-const storage = getStorage(app);
-const auth = getAuth(app);
+const db = getFirestore();
+const storage = getStorage();
+const auth = getAuth();
 
 export {app, auth, db, storage};

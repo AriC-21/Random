@@ -6,9 +6,7 @@ import * as yup from "yup";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Link from "next/link";
-import SocialMediaButton from "@/components/SocialMediaButton";
-import emailLogin from "firebase/login";
-import googleAuth from "firebase/google-auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const schema = yup.object().shape({
   email: yup.string().email().required("* Email is required."),
@@ -26,7 +24,7 @@ export default function LoginForm() {
   });
 
   const onSubmit = (data) => {
-    emailLogin({ email: data.email, password: data.password }).catch((e) =>
+    signInWithEmailAndPassword({ email: data.email, password: data.password }).catch((e) =>
       setLoginError(e.message)
     );
   };
