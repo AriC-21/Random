@@ -1,8 +1,8 @@
-import { firebase, auth, db } from "../config/firebase";
+import { auth, db } from "../config/firebase";
 
 export default function googleAuth() {
   auth
-    .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .signInWithPopup(new auth.GoogleAuthProvider())
     .then(function (result) {
       db.collection("Users")
         .doc(result.user.uid)

@@ -108,6 +108,8 @@ def search():
             x_df = pd.concat([x_df,new_df])
 
     arr = x_df['id'].head(10).values
+    # Just want to see how it's returning the json file
+    print(jsonify({'searchResult': arr.tolist()}))
     return jsonify({'searchResult': arr.tolist()})
 
 @app.route('/sentiment')

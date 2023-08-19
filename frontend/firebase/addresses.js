@@ -1,6 +1,6 @@
 import { auth, db} from "../config/firebase";
 import { Firestore } from "firebase/firestore";
-
+import { getFirestore } from "firebase/firestore";
 const addAddress = ({ title, city, region, zipcode, full_address }) => {
   db.collection("Addresses")
     .add({
@@ -14,7 +14,7 @@ const addAddress = ({ title, city, region, zipcode, full_address }) => {
       db.collection("Users")
         .doc(auth.currentUser.uid)
         .update({
-          addresses: Firestore.FieldValue.arrayUnion(doc.id),
+          addresses: getFirestore.FieldValue.arrayUnion(doc.id),
         })
         .finally(() => window.location.reload(false)); // reload page
     });

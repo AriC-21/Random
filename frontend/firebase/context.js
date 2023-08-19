@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import { firebase, auth, db } from "../config/firebase";
-import {getAuth} from "firebase/auth"
+import { auth, db } from "../config/firebase";
+import { collection } from "firebase/firestore";
 const authContext = createContext();
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
@@ -16,8 +16,8 @@ function useProvideAuth() {
 
   const getCurrentUser = () => {
     auth.currentUser?.uid
-      ? db
-          .collection("Users")
+      ? 
+        collection(db,"Users")
           .doc(auth.currentUser.uid)
           .get()
           .then((doc) => {
@@ -28,7 +28,7 @@ function useProvideAuth() {
   };
 
   useEffect(() => {
-    const unsubscribe = getAuth()
+    const unsubscribe = auth
       .onAuthStateChanged(() => getCurrentUser());
     return () => unsubscribe();
   }, []);
