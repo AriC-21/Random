@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import { auth, db } from "../config/firebase";
-import { collection } from "firebase/firestore";
+import { collection,doc } from "firebase/firestore";
 const authContext = createContext();
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
@@ -18,7 +18,7 @@ function useProvideAuth() {
     auth.currentUser?.uid
       ? 
         collection(db,"Users")
-          .doc(auth.currentUser.uid)
+          .doc(db,auth.currentUser.uid)
           .get()
           .then((doc) => {
             setUser(doc.data());
