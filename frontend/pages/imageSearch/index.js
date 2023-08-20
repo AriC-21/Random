@@ -4,7 +4,6 @@ import { useAuth } from "@/firebase/context";
 import Layout from "components/Layout";
 import Head from "next/head";
 import { useState } from "react";
-
 import styles from "./imageSearch.module.scss";
 
 export default function ImageSearch() {
@@ -13,32 +12,15 @@ export default function ImageSearch() {
   const [reddata, setData] = useState()
   console.log(user, loading);
 
-  // const uploadToFirebase = (e) => {
-  //   const file = e.target.files[0]
-  //   const storageRef = storage.ref('img/'+file.name);
-  //   const task = storageRef.put(file);
-  //   task.on('state_changed', function progress(snapshot) {
-  //     var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-  //     setUploaderVal(percentage);
-
-  //   }, function error(err) {
-
-
-  //   },async function  complete(data) {
-  //     console.log("img upload data ,", data)
-  //     const url = await storage.ref("/img/"+file.name).getDownloadURL().then(url => url)
-  //     console.log(url)
-
-  //     const ddata = fetch(`http://localhost:5000/image_search?url=${url}`).then(res => res.json())
-  //     console.log(ddata)
-  //     setData(ddata)
-
-  //   });
-  // }
-
   const fetchRecommendations = async (e) => {
     e.preventDefault()
-    const data = await fetch(`http://localhost:5000/image_search?url=${linkVal}`).then(res => res.json())
+    const data = await fetch(`http://localhost:5000/image_search?url=${linkVal}`).then(res => res.json(),{
+      headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': POST, PUT, PATCH, GET, DELETE, OPTIONS,
+        'Access-Control-Allow-Headers': '*'
+      }
+    })
     console.log("recommend data ", data)
    
     const recommendIdStrings = []

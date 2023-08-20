@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import { auth, db } from "../config/firebase";
-import { collection,doc } from "firebase/firestore";
+import { collection, query, where, getDoc,doc} from "firebase/firestore";
+import { set } from "date-fns";
+
 const authContext = createContext();
 export function AuthProvider({ children }) {
   const auth = useProvideAuth();
@@ -15,15 +17,26 @@ function useProvideAuth() {
   const [loading, setLoading] = useState(true); 
 
   const getCurrentUser = () => {
+    const docRef = doc(db,"Users",currentUser.uid);
+    const docSnap = getDoc(docRef);
+    console.log(docSnap)
+
     auth.currentUser?.uid
       ? 
-        collection(db,"Users")
-          .doc(db,auth.currentUser.uid)
-          .get()
-          .then((doc) => {
-            setUser(doc.data());
-            setLoading(false);
-          })
+      //   collection(db,"Users")
+      //     .doc(db,auth.currentUser.uid)
+      //     .get()
+      //     .then((doc) => {
+      //       setUser(doc.data());
+      //       setLoading(false);
+      //     })
+      // : setLoading(false);
+      getDoc(doc(db,"Users",currentUser.uid))
+        .then((doc)=>{
+          setUser(doc.data());
+          setLoading(false);
+        }
+        )
       : setLoading(false);
   };
 
