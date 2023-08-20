@@ -80,7 +80,7 @@ def imagesearch():
        
     os.remove("./uploads/"+'test.jpg')
 
-
+    print(jsonify({'result': final_Arr}))
     return jsonify({'result': final_Arr})
 
 
