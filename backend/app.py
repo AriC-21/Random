@@ -12,7 +12,7 @@ from sklearn.neighbors import NearestNeighbors
 import pandas as pd
 from transformers import pipeline
 from flask_cors import CORS, cross_origin
-
+from werkzeug.utils import secure_filename
 
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
@@ -52,16 +52,16 @@ def helloworld():
 def index():
     args = request.args
     path = args['name']
-    id = args['id']
+    id = secure_filename(args['id'])
     
-    urllib.request.urlretrieve(path, "./uploads/"+str(id)+".jpg")
-    result = extract_features("./uploads/"+str(id)+'.jpg',model)
+    urllib.request.urlretrieve(path, "./uploads/"+id+".jpg")
+    result = extract_features("./uploads/"+id+'.jpg',model)
     distances,indices = neighbors.kneighbors([result])
     final_Arr = []
     for i in indices[0]:
         final_Arr.append(int(str(filenames[i].split('/')[-1].split('.')[0])))
        
-    os.remove("./uploads/"+str(id)+'.jpg')
+    os.remove("./uploads/"+id+'.jpg')
     return jsonify({'result': final_Arr})
 
 
