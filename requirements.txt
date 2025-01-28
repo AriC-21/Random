@@ -23,7 +23,7 @@ charset-normalizer==3.2.0
 click==8.1.6
 colorama==0.4.6
 comm==0.1.4
-configobj==5.0.8
+configobj==5.0.9
 constantly==15.1.0
 contourpy==1.1.0
 cryptography==43.0.1
@@ -68,7 +68,7 @@ itsdangerous==2.1.2
 jaraco.classes==3.3.0
 jedi==0.19.0
 jeepney==0.8.0
-Jinja2==3.1.4
+Jinja2==3.1.5
 joblib==1.3.2
 json5==0.9.14
 jsonpatch==1.33
@@ -86,7 +86,7 @@ jupyterlab==4.2.5
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==3.0.8
 jupyterlab_server==2.24.0
-keras==2.13.1
+keras==3.8.0
 Keras-Preprocessing==1.1.2
 keyring==24.2.0
 kiwisolver==1.4.4
@@ -184,7 +184,7 @@ threadpoolctl==3.2.0
 tinycss2==1.2.1
 tokenizers==0.13.3
 tomli==2.0.1
-tornado==6.4.1
+tornado==6.4.2
 tqdm==4.66.3
 traitlets==5.9.0
 transformers==4.38.0
@@ -193,13 +193,13 @@ typing_extensions==4.5.0
 tzdata==2023.3
 uri-template==1.3.0
 urllib3==1.26.19
-virtualenv==20.24.3
+virtualenv==20.26.6
 wadllib==1.3.6
 wcwidth==0.2.6
 webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.6.1
-Werkzeug==3.0.3
+Werkzeug==3.0.6
 widgetsnbextension==4.0.8
 wrapt==1.15.0
 xxhash==3.3.0
