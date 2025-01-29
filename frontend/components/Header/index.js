@@ -88,7 +88,7 @@ export default function Header() {
         <form
           onSubmit={(e) =>
             {e.preventDefault()
-              if(input && typeof window !== "undefined" ) router.push(`/search/${input}`)
+              if(input && typeof window !== "undefined" ) router.push(`/search/${encodeURIComponent(input)}`)
             }}
         >
           <input
