@@ -187,7 +187,7 @@ tomli==2.0.1
 tornado==6.4.2
 tqdm==4.66.3
 traitlets==5.9.0
-transformers==4.38.0
+transformers==4.48.0
 Twisted==24.7.0
 typing_extensions==4.5.0
 tzdata==2023.3
